@@ -1,25 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   index.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: otzarwal <otzarwal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/03 11:25:11 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/08 10:04:20 by otzarwal         ###   ########.fr       */
+/*   Created: 2025/02/06 16:16:42 by yagame            #+#    #+#             */
+/*   Updated: 2025/02/08 09:56:05 by otzarwal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../include/push_swap.h"
 
-# include "../libft/libft.h"
-# include "../ft_printf/ft_printf.h"
+void ft_index(t_stack **a)
+{
+    t_stack *tmp;
+    t_stack *tmp2;
+    (*a)->index = 0;
+    
+    tmp = *a;
+    tmp2 = *a;
 
+    while(tmp)
+    {
+        while(tmp2)
+        {
+            if(tmp->data > tmp2->data)
+            {
+                tmp->index++;
+            }
+            tmp2 = tmp2->next;
+        }
+        tmp2 = (*a)->next;
+        tmp = tmp->next;
+    }
 
-void    ft_index(t_stack **a);
-void    join_argv(char **av, char **all_arg);
-int     check_is_only_digit(char **arg);
-int     check_duplicate(t_stack **a, char **arg);
-
-#endif
+}
