@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   moves.c                                            :+:      :+:    :+:   */
+/*   moves_p_s.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yagame <yagame@student.42.fr>              +#+  +:+       +#+        */
+/*   By: otzarwal <otzarwal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 14:45:58 by yagame            #+#    #+#             */
-/*   Updated: 2025/02/07 11:56:15 by yagame           ###   ########.fr       */
+/*   Updated: 2025/02/08 14:26:04 by otzarwal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,7 @@ void pa(t_stack **a, t_stack **b)
 
 void pb(t_stack **a, t_stack **b)
 {
-    t_stack *tmp;
-
-    if (!*a)
-        return ;
-    tmp = *a;
-    *a = (*a)->next;
-    tmp->next = *b;
-    *b = tmp;
+    ft_lstadd_back(b, *a);
 }
 void sa(t_stack **a)
 {

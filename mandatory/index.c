@@ -6,7 +6,7 @@
 /*   By: otzarwal <otzarwal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 16:16:42 by yagame            #+#    #+#             */
-/*   Updated: 2025/02/08 09:56:05 by otzarwal         ###   ########.fr       */
+/*   Updated: 2025/02/08 13:05:23 by otzarwal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void ft_index(t_stack **a)
             }
             tmp2 = tmp2->next;
         }
-        tmp2 = (*a)->next;
+        tmp2 = *a;
         tmp = tmp->next;
     }
 
