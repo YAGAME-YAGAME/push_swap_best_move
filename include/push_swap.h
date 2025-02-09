@@ -6,7 +6,7 @@
 /*   By: otzarwal <otzarwal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 11:25:11 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/09 09:50:20 by otzarwal         ###   ########.fr       */
+/*   Updated: 2025/02/09 12:20:26 by otzarwal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,14 @@ int     check_moves(t_stack **a, t_stack **b);
 // moves
 void pa(t_stack **a, t_stack **b);
 void pb(t_stack **a, t_stack **b);
-void sa(t_stack **a);
-void sb(t_stack **b);
+void ra(t_stack **lst);
+void rb(t_stack **lst);
+void rr(t_stack **a, t_stack **b);
+void rra(t_stack **lst);
+void rrb(t_stack **lst);
+void rrr(t_stack **a, t_stack **b);
+void sa(t_stack **lst);
+void sb(t_stack **lst);
+void ss(t_stack **a, t_stack **b);
 
 #endif

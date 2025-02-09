@@ -3,12 +3,19 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
+MOVES_DIR = ./mandatory/operations/
+
 SRCS= ./mandatory/push_swap.c \
 		./mandatory/checker.c \
-		./mandatory/moves_p_s.c \
 		./mandatory/index.c \
 		./mandatory/utils.c \
 		./mandatory/check_moves.c \
+		$(MOVES_DIR)sa.c 	$(MOVES_DIR)sb.c \
+		$(MOVES_DIR)pa.c 	$(MOVES_DIR)pb.c \
+		$(MOVES_DIR)rra.c 	$(MOVES_DIR)rrb.c \
+		$(MOVES_DIR)ra.c 	$(MOVES_DIR)rb.c \
+		$(MOVES_DIR)rr.c 	$(MOVES_DIR)rrr.c \
+		$(MOVES_DIR)ss.c \
 
 OBJS = $(SRCS:.c=.o)
 
