@@ -6,7 +6,7 @@
 /*   By: otzarwal <otzarwal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 11:27:07 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/08 13:00:44 by otzarwal         ###   ########.fr       */
+/*   Updated: 2025/02/09 09:53:26 by otzarwal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,20 +58,11 @@ int main(int ac, char **av)
         alloc_free(split_arg, count_word(all_arg, ' '));
     }
     ft_index(&a);
-    if (ft_lstsize(a) <= 5)
+    if (check_moves(&a, &b) == 0)
     {
-        ft_sort(&a, &b);
+        ft_printf("\033[;31mthe list not sorted\033[;31m\n");
+        return (0);
     }
-    // while(a)
-    // {
-    //     printf("data: %d index: %d\n", a->data, a->index);
-    //     a = a->next;
-    // }
-    
-    
-    
-    
- 
     
     return (0);
 }

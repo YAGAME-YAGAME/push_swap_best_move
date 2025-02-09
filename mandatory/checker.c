@@ -6,7 +6,7 @@
 /*   By: otzarwal <otzarwal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 13:07:36 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/08 14:32:23 by otzarwal         ###   ########.fr       */
+/*   Updated: 2025/02/09 09:34:34 by otzarwal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,10 +85,9 @@ void ft_sort(t_stack **a, t_stack **b)
     
     while (tmp)
     {
-        printf("data: %d\n", tmp->data);
-        if(tmp->index >= 3)
+
+        if(tmp->index <= 1)
         {
-            tmp = (*a)->next;
             pb(&tmp, b);
             printf("pb\n");
         }
@@ -96,16 +95,4 @@ void ft_sort(t_stack **a, t_stack **b)
             tmp = tmp->next;
     }
     
-    printf("\n\n\nstack b\n\n\n============================\n");
-    while(*b)
-    {
-        printf("data: %d  | index: %d\n", (*b)->data, (*b)->index);
-        *b = (*b)->next;
-    }
-    printf("============================\nstack a\n\n");
-    while(*a)
-    {
-        printf("data: %d  | index: %d\n", (*a)->data, (*a)->index);
-        *a = (*a)->next;
-    }
 }
