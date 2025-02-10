@@ -6,7 +6,7 @@
 /*   By: otzarwal <otzarwal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 11:27:07 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/09 20:21:36 by otzarwal         ###   ########.fr       */
+/*   Updated: 2025/02/10 20:00:17 by otzarwal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,20 +58,22 @@ int main(int ac, char **av)
         alloc_free(split_arg, count_word(all_arg, ' '));
     }
     ft_index(&a);
-    if (check_moves(&a, &b) == 1 && ac > 3)
+    if (check_moves(&a, &b) == 1 && ac >= 3)
     {
         ft_printf("\033[;31mthe list sorted\033[;31m\n");
         return (0);
     }
-    else if (ac == 3)
-    {
-        if(a->index > a->next->index)
+    else if (ac == 3 && a->index > a->next->index)
             sa(&a);
+    sort_all(&a, &b);
+    
+    while(b)
+    {
+        ft_printf("data: %d\n", b->data);
+        b = b->next;
     }
-    // while(a)
-    // {
-    //     ft_printf("data: %d\n", a->data);
-    //     a = a->next;
-    // }
+    // printf("\n\n\nstack b\n\n");
+    
+    
     return (0);
 }

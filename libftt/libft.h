@@ -6,7 +6,7 @@
 /*   By: otzarwal <otzarwal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 13:09:48 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/08 18:35:19 by otzarwal         ###   ########.fr       */
+/*   Updated: 2025/02/10 12:04:37 by otzarwal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef struct s_stack
 {
     int data;
     int index;
+    struct s_stack *prev;
     struct s_stack *next;
 } t_stack;
 

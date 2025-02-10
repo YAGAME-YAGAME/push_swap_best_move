@@ -6,7 +6,7 @@
 /*   By: otzarwal <otzarwal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 09:42:52 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/09 20:24:06 by otzarwal         ###   ########.fr       */
+/*   Updated: 2025/02/10 18:37:35 by otzarwal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,36 +14,70 @@
 
 int    check_sort(t_stack **a)
 {
+    
     t_stack *tmp;
-    t_stack *tmp2;
     tmp = *a;
-    while(tmp->next)
-    {
-        tmp2 = tmp->next;
-        while (tmp2->next)
-        {
-            if (tmp->data > tmp2->next->data)
-                return (0);
-            tmp2 = tmp2->next;
-        }
+    while (tmp && tmp->next) {
+        if (tmp->index > tmp->next->index)
+            return 0;  // Not sorted
         tmp = tmp->next;
     }
-    return (1);
+    return 1;
 }
 
 void   ft_sort_3(t_stack **a)
 {
-    t_stack *tmp;
-    tmp = *a;
     
-    if (tmp->index > tmp->next->index  && tmp->next->index < tmp->next->next->index)
+    int first;
+    int second;
+    int third;
+    
+    first = (*a)->index;
+    second = (*a)->next->index;
+    third = (*a)->next->next->index;
+
+    if (first > second && first > third) 
         ra(a);
-    // if (tmp->next->index > tmp->next->next->index)
-    //     rra(&tmp);
-    // if (tmp->index > tmp->next->next->index)
-    //     rra(&tmp);
-    // if (tmp->index > tmp->next->index )
-    //     sa(&tmp);
+    if (first < second && second > third) 
+        rra(a);
+    if ((*a)->index > (*a)->next->index) 
+        sa(a);
+}
+
+
+
+void    p_big(t_stack **a, t_stack **b)
+{
+    t_stack *tmp;
+    t_stack *big;
+    (void)b;
+    
+    tmp = *a;
+    big = *a;
+    while(tmp)
+    {
+        if (tmp->index > big->index)
+            big = tmp;
+        tmp = tmp->next;
+    }
+    if (big->index < ft_lstsize(*a) / 2)
+    {
+        while ((*a)->data != big->data)
+            ra(a);
+    }
+    else
+    {
+        while ((*a)->data != big->data)
+            rra(a);
+    }
+}
+void ft_sort_4(t_stack **a, t_stack **b)
+{
+    p_big(a, b);
+    pb(a, b);
+    ft_sort_3(a);
+    pa(a, b);
+    ra(a);
 }
 
 int    check_moves(t_stack **a, t_stack **b)
@@ -56,9 +90,19 @@ int    check_moves(t_stack **a, t_stack **b)
         return (1);
     if (ft_lstsize(*a) == 3)
         ft_sort_3(a);
-    printf("data: %d\n", (*a)->data);
-    // printf("data: %d\n", (*a)->next->data);
-    // printf("data: %d\n", (*a)->next->next->data);
+    else if (ft_lstsize(*a) == 4)
+    {
+        ft_sort_4(a, b);
+    }
+    else if (ft_lstsize(*a) == 5)
+    {
+        p_big(a, b);
+        pb(a, b);
+        ft_sort_4(a, b);
+        pa(a, b);
+        ra(a);
+       
+    }
 
     return check;
 }

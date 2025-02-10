@@ -10,6 +10,7 @@ SRCS= ./mandatory/push_swap.c \
 		./mandatory/index.c \
 		./mandatory/utils.c \
 		./mandatory/check_moves.c \
+		./mandatory/sort.c \
 		$(MOVES_DIR)sa.c 	$(MOVES_DIR)sb.c \
 		$(MOVES_DIR)pa.c 	$(MOVES_DIR)pb.c \
 		$(MOVES_DIR)rra.c 	$(MOVES_DIR)rrb.c \
