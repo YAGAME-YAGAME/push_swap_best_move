@@ -6,7 +6,7 @@
 /*   By: otzarwal <otzarwal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 11:25:11 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/10 19:58:25 by otzarwal         ###   ########.fr       */
+/*   Updated: 2025/02/11 14:04:56 by otzarwal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void    ft_sort(t_stack **a, t_stack **b);
 int     check_moves(t_stack **a, t_stack **b);
 
 void    sort_all(t_stack **a, t_stack **b);
+void    p_big(t_stack **a, t_stack **b);
 
 // moves
 void pa(t_stack **a, t_stack **b);

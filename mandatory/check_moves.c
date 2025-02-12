@@ -6,7 +6,7 @@
 /*   By: otzarwal <otzarwal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 09:42:52 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/10 18:37:35 by otzarwal         ###   ########.fr       */
+/*   Updated: 2025/02/12 13:54:22 by otzarwal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,10 @@ int    check_moves(t_stack **a, t_stack **b)
         pa(a, b);
         ra(a);
        
+    }
+    else
+    {
+        sort_all(a, b);
     }
 
     return check;

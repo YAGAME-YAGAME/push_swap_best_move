@@ -6,24 +6,62 @@
 /*   By: otzarwal <otzarwal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 19:08:30 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/10 20:44:09 by otzarwal         ###   ########.fr       */
+/*   Updated: 2025/02/12 19:48:41 by otzarwal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
-int check_range(t_stack *a)
+int get_index(t_stack *b, int index)
 {
-    int range;
-    int len;
-    len = ft_lstsize(a);
-    if (len <= 100)
-        range = 15;
-    else if (len <= 200)
-        range = 20;
+    t_stack *tmp;
+    int i;
+    
+    i = 0;
+    tmp = b;
+    while (tmp)
+    {
+        if (tmp->index == index)
+            return (i);
+        tmp = tmp->next;
+        i++;
+    }
+    return (0);
+}
+void    p_big_a(t_stack **b)
+{
+    t_stack *tmp;
+    t_stack *big;
+    int index;
+    int i;
+    
+    i = 0;
+    big = *b;
+    tmp = *b;
+    while(tmp)
+    {
+        if (tmp->index > big->index)
+            big = tmp;
+        tmp = tmp->next;
+        i++;
+    }
+    index = get_index(*b, big->index);
+    if (index <= ft_lstsize(*b) / 2)
+    {
+        while (index--)
+            rb(b);
+    }
     else
-        range = 30;
-    return range;
+    {
+        while (index++ < ft_lstsize(*b))
+            rrb(b);
+    }
+}
+
+void sort_b_to_a(t_stack **a, t_stack **b)
+{
+    p_big_a(b);
+    pa(a, b);
+
 }
 
 void    sort_all(t_stack **a, t_stack **b)
@@ -35,11 +73,11 @@ void    sort_all(t_stack **a, t_stack **b)
     
     len = ft_lstsize(*a);
     index = 0;
-    range = check_range(*a);
+    range = ft_lstsize(*a) * 0.048 + 10;
     tmp = *a;
-    while (len)
+    while (len--)
     {
-        if (tmp->index >= index && tmp->index < index + range)
+        if (tmp->index >= index && tmp->index <= range)
         {
             index++;
             range++;
@@ -49,11 +87,23 @@ void    sort_all(t_stack **a, t_stack **b)
         {
             pb(a, b);
             rb(b);
+            index++;
+            range++;
         }
-        else
+        else if (tmp->index > range)
+        {
             ra(a);
+            len++;
+        }
+        tmp = *a;
         
-        len--;
+        
+    }
+    
+    while (*b)
+    {
+        /* code */
+        sort_b_to_a(a, b);
     }
     
 }
