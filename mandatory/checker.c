@@ -6,7 +6,7 @@
 /*   By: otzarwal <otzarwal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 13:07:36 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/09 09:34:34 by otzarwal         ###   ########.fr       */
+/*   Updated: 2025/02/12 20:58:36 by otzarwal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,21 +37,25 @@ int duplicate(t_stack *a, int num)
 int     check_duplicate(t_stack **a, char **arg)
 {
     int i;
-    int num;
+    long num;
+    int ck;
     t_stack *node;
     num = 0;
-    int check = 1;
     i = 0;
+    ck = 1;
     while(arg[i])
     {
         num = ft_atoi(arg[i]);
+        // printf("num = %d\n", num);
+        if (num < -2147483648 || num > 2147483647)
+            return (0);
         if (!duplicate(*a, num))
-                check = 0;
+            return (0);
         node = ft_lstnew(num);
         ft_lstadd_back(a, node);
         i++;
     }
-    return (check);
+    return (1);
 }
 void    join_argv(char **av, char **all_arg)
 {

@@ -6,7 +6,7 @@
 /*   By: otzarwal <otzarwal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 18:41:28 by otzarwal          #+#    #+#             */
-/*   Updated: 2024/11/02 11:57:37 by otzarwal         ###   ########.fr       */
+/*   Updated: 2025/02/12 21:00:19 by otzarwal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ static int	ft_skip_spaces(char c)
 		|| c == '\v');
 }
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
-	unsigned long long	res;
-	int					q;
-	int					i;
+	long long	res;
+	int				q;
+	int				i;
 
 	i = 0;
 	res = 0;
@@ -36,13 +36,7 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	while (str[i] >= '0' && str[i] <= '9')
-	{
-		if (res > 9223372036854775807 && q == 1)
-			return (-1);
-		if (res > 9223372036854775807 && q == -1)
-			return (0);
 		res = res * 10 + (str[i++] - '0');
-	}
 	return (res *= q);
 }
 // #include <stdio.h>

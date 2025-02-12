@@ -6,12 +6,37 @@
 /*   By: otzarwal <otzarwal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 11:19:33 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/08 11:20:06 by otzarwal         ###   ########.fr       */
+/*   Updated: 2025/02/12 20:22:41 by otzarwal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
+void ft_clear(char **a)
+{
+	int i;
+	i = 0;
+	if(!a || !*a)
+		return ;
+	while(a[i])
+	{
+		free(a[i]);
+		i++;
+	}
+	free(a);
+}
+void ft_clear_lst(t_stack **a)
+{
+	t_stack *tmp;
+	if(!a || !*a)
+		return ;
+	while(*a)
+	{
+		tmp = *a;
+		*a = (*a)->next;
+		free(tmp);
+	}
+}
 
 char	*ft_strdup(const char *s1)
 {

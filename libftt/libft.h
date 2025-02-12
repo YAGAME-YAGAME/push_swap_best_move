@@ -6,7 +6,7 @@
 /*   By: otzarwal <otzarwal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 13:09:48 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/10 12:04:37 by otzarwal         ###   ########.fr       */
+/*   Updated: 2025/02/12 21:05:21 by otzarwal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int					ft_isprint(int c);
 // int	                *ft_nbrdup(int nbr);
 int	                count_word(const char *str, char sep);
 char	            **alloc_free(char **bf, int index);
+int	                count_word(const char *str, char sep);
 
 size_t				ft_strlen(const char *s);
 void				*ft_memset(void *b, int c, size_t len);
@@ -59,7 +60,7 @@ void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 char				*ft_strnstr(const char *haystack, const char *needle,
 						size_t len);
-int					ft_atoi(const char *str);
+long            	ft_atoi(const char *str);
 void				*ft_calloc(size_t count, size_t size);
 char				*ft_strdup(const char *s1);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
