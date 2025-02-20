@@ -11,6 +11,8 @@ SRCS= ./mandatory/push_swap.c \
 		./mandatory/utils.c \
 		./mandatory/check_moves.c \
 		./mandatory/sort.c \
+		./mandatory/print_stack.c \
+		./mandatory/best_move.c \
 		$(MOVES_DIR)sa.c 	$(MOVES_DIR)sb.c \
 		$(MOVES_DIR)pa.c 	$(MOVES_DIR)pb.c \
 		$(MOVES_DIR)rra.c 	$(MOVES_DIR)rrb.c \
@@ -23,7 +25,7 @@ OBJS = $(SRCS:.c=.o)
 all : $(OBJS) ./libft/libft.a ./ft_printf/libftprintf.a
 	@$(CC) $(CFLAGS) $(OBJS) ./libft/libft.a  ./ft_printf/libftprintf.a -o push_swap
 
-%.o: %.c ./include/push_swap.h
+%.o: %.c ./include/push_swap.h libft/libft.h ft_printf/ft_printf.h
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean :

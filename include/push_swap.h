@@ -6,7 +6,7 @@
 /*   By: otzarwal <otzarwal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 11:25:11 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/12 20:23:13 by otzarwal         ###   ########.fr       */
+/*   Updated: 2025/02/19 19:11:21 by otzarwal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,17 @@ int     check_is_only_digit(char **arg);
 int     check_duplicate(t_stack **a, char **arg);
 
 void    ft_sort(t_stack **a, t_stack **b);
-int     check_moves(t_stack **a, t_stack **b);
+void    ft_sort_3(t_stack **a);
 
+
+void    ft_print_stack(t_stack *a, t_stack *b);
 void    sort_all(t_stack **a, t_stack **b);
-void    p_big(t_stack **a, t_stack **b);
 
 //utils
 void ft_clear(char **a);
 void ft_clear_lst(t_stack **a);
 
+void    sort_to_a(t_stack **a, t_stack **b);
 
 // moves
 void pa(t_stack **a, t_stack **b);

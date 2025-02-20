@@ -6,104 +6,104 @@
 /*   By: otzarwal <otzarwal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 19:08:30 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/12 19:48:41 by otzarwal         ###   ########.fr       */
+/*   Updated: 2025/02/20 00:25:47 by otzarwal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-int get_index(t_stack *b, int index)
+
+int   get_midel(t_stack *a)
 {
+    int midel;
     t_stack *tmp;
-    int i;
     
-    i = 0;
-    tmp = b;
-    while (tmp)
-    {
-        if (tmp->index == index)
-            return (i);
-        tmp = tmp->next;
-        i++;
-    }
-    return (0);
-}
-void    p_big_a(t_stack **b)
-{
-    t_stack *tmp;
-    t_stack *big;
-    int index;
-    int i;
-    
-    i = 0;
-    big = *b;
-    tmp = *b;
+    tmp = a;
+    midel = 0;
     while(tmp)
     {
-        if (tmp->index > big->index)
-            big = tmp;
+        midel += tmp->data;
+        tmp = tmp->next;
+    }
+    return (midel / ft_lstsize(a));
+}
+int     get_index(t_stack **a, int data)
+{
+    t_stack *tmp;
+    int i;
+
+    i = 0;
+    tmp = *a;
+    while(tmp)
+    {
+        if(tmp->data == data)
+            return(i);
         tmp = tmp->next;
         i++;
     }
-    index = get_index(*b, big->index);
-    if (index <= ft_lstsize(*b) / 2)
+    return (-1);
+}
+void    move_top(t_stack **a, int data)
+{
+    t_stack *tmp;
+    int index;
+
+    tmp = *a;
+    index = get_index(a, data);
+    // printf("index %d", index);
+    if(index == 0)
+        return ;
+    if (index <= ft_lstsize(*a) / 2)
     {
         while (index--)
-            rb(b);
+            ra(a);
     }
-    else
-    {
-        while (index++ < ft_lstsize(*b))
-            rrb(b);
+    else 
+    {   
+        while (index++ < ft_lstsize(*a))
+            rra(a);
     }
 }
 
-void sort_b_to_a(t_stack **a, t_stack **b)
+void    sort_stack(t_stack **a, t_stack **b)
 {
-    p_big_a(b);
-    pa(a, b);
-
+    int midel;
+    t_stack *tmp;
+    
+    tmp = *a;
+    midel = get_midel(*a);
+    while(tmp && ft_lstsize(*a) > 3)
+    {
+        if (tmp->data < midel)
+        {
+            move_top(a, tmp->data);
+            pb(a, b);
+            tmp = *a;
+        }
+        else   
+            tmp = tmp->next;
+    }
+    while (ft_lstsize(*a) > 3)
+        pb(a, b);
+    ft_sort_3(a);
 }
 
 void    sort_all(t_stack **a, t_stack **b)
 {
-    t_stack *tmp;
-    int range;
-    int index;
     int len;
-    
     len = ft_lstsize(*a);
-    index = 0;
-    range = ft_lstsize(*a) * 0.048 + 10;
-    tmp = *a;
-    while (len--)
+
+    if (len == 3)
     {
-        if (tmp->index >= index && tmp->index <= range)
-        {
-            index++;
-            range++;
-            pb(a, b);
-        }
-        else if (tmp->index < index)
-        {
-            pb(a, b);
-            rb(b);
-            index++;
-            range++;
-        }
-        else if (tmp->index > range)
-        {
-            ra(a);
-            len++;
-        }
-        tmp = *a;
-        
-        
+        ft_sort_3(a);
+        return ;
     }
-    
-    while (*b)
+    else if (len == 2 && (*a)->data > (*a)->next->data)
     {
-        /* code */
-        sort_b_to_a(a, b);
+        sa(a);
+        return ;
     }
+    else
+        sort_stack(a, b);
     
 }
+

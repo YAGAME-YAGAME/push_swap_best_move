@@ -6,7 +6,7 @@
 /*   By: otzarwal <otzarwal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 09:42:52 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/12 21:13:29 by otzarwal         ###   ########.fr       */
+/*   Updated: 2025/02/19 19:14:02 by otzarwal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int    check_sort(t_stack **a)
     t_stack *tmp;
     tmp = *a;
     while (tmp && tmp->next) {
-        if (tmp->index > tmp->next->index)
+        if (tmp->data > tmp->next->data)
             return 0;  // Not sorted
         tmp = tmp->next;
     }
@@ -32,81 +32,14 @@ void   ft_sort_3(t_stack **a)
     int second;
     int third;
     
-    first = (*a)->index;
-    second = (*a)->next->index;
-    third = (*a)->next->next->index;
+    first = (*a)->data;
+    second = (*a)->next->data;
+    third = (*a)->next->next->data;
 
     if (first > second && first > third) 
         ra(a);
     if (first < second && second > third) 
         rra(a);
-    if ((*a)->index > (*a)->next->index) 
+    if ((*a)->data > (*a)->next->data) 
         sa(a);
-}
-
-
-
-void    p_big(t_stack **a, t_stack **b)
-{
-    t_stack *tmp;
-    t_stack *big;
-    (void)b;
-    
-    tmp = *a;
-    big = *a;
-    while(tmp)
-    {
-        if (tmp->index > big->index)
-            big = tmp;
-        tmp = tmp->next;
-    }
-    if (big->index < ft_lstsize(*a) / 2)
-    {
-        while ((*a)->data != big->data)
-            ra(a);
-    }
-    else
-    {
-        while ((*a)->data != big->data)
-            rra(a);
-    }
-}
-void ft_sort_4(t_stack **a, t_stack **b)
-{
-    p_big(a, b);
-    pb(a, b);
-    ft_sort_3(a);
-    pa(a, b);
-    ra(a);
-}
-
-int    check_moves(t_stack **a, t_stack **b)
-{
-    int check;
-    (void)b;
-    check = 1;
-    check = check_sort(a);
-    if (check == 1)
-        return (1);
-    if (ft_lstsize(*a) == 3)
-        ft_sort_3(a);
-    else if (ft_lstsize(*a) == 4)
-    {
-        ft_sort_4(a, b);
-    }
-    else if (ft_lstsize(*a) == 5)
-    {
-        p_big(a, b);
-        pb(a, b);
-        ft_sort_4(a, b);
-        pa(a, b);
-        ra(a);
-       
-    }
-    else
-    {
-        sort_all(a, b);
-    }
-
-    return check;
 }

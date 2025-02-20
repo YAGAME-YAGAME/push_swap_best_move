@@ -6,7 +6,7 @@
 /*   By: otzarwal <otzarwal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 11:27:07 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/12 21:13:00 by otzarwal         ###   ########.fr       */
+/*   Updated: 2025/02/20 00:43:13 by otzarwal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void ll()
 }
 int main(int ac, char **av)
 {
-    // atexit(ll);
     t_stack *a;
     t_stack *b;
     int count;
@@ -53,14 +52,8 @@ int main(int ac, char **av)
         ft_clear_lst(&a);
         exit(0);
     }
-    // system("leaks -q push_swap");
-    ft_index(&a);
-    if (count == 2 && a->index > a->next->index)
-            sa(&a);
-    else if (check_moves(&a, &b) == 1)
-    {
-        ft_printf("\033[;31mthe list sorted\033[;31m\n");
-        return (0);
-    }
+    sort_all(&a, &b);
+    sort_to_a(&a, &b);
+    ft_print_stack(a, b);
     return (0);
 }

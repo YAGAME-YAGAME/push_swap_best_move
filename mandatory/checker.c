@@ -6,7 +6,7 @@
 /*   By: otzarwal <otzarwal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 13:07:36 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/12 20:58:36 by otzarwal         ###   ########.fr       */
+/*   Updated: 2025/02/19 19:13:09 by otzarwal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ int     check_duplicate(t_stack **a, char **arg)
     while(arg[i])
     {
         num = ft_atoi(arg[i]);
-        // printf("num = %d\n", num);
         if (num < -2147483648 || num > 2147483647)
             return (0);
         if (!duplicate(*a, num))
@@ -82,21 +81,21 @@ int    check_is_only_digit(char **arg)
     return (1);
 }
 
-void ft_sort(t_stack **a, t_stack **b)
-{
-    t_stack *tmp;
-    tmp = *a;
+// void ft_sort(t_stack **a, t_stack **b)
+// {
+//     t_stack *tmp;
+//     tmp = *a;
     
-    while (tmp)
-    {
+//     while (tmp)
+//     {
 
-        if(tmp->index <= 1)
-        {
-            pb(&tmp, b);
-            printf("pb\n");
-        }
-        else
-            tmp = tmp->next;
-    }
+//         if(tmp->index <= 1)
+//         {
+//             pb(&tmp, b);
+//             printf("pb\n");
+//         }
+//         else
+//             tmp = tmp->next;
+//     }
     
-}
+// }
