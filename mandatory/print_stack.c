@@ -6,7 +6,7 @@
 /*   By: otzarwal <otzarwal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 20:04:44 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/20 00:26:52 by otzarwal         ###   ########.fr       */
+/*   Updated: 2025/02/21 22:13:24 by otzarwal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void    ft_print_stack(t_stack *a, t_stack *b)
     printf("stack b\n");
     while(b)
     {
-        ft_printf("data -> %d    target -> %d\n", b->data , b->target);
+        ft_printf("data -> %d    target -> %d\n", b->data , *b->target);
         b = b->next;
     }
 }
