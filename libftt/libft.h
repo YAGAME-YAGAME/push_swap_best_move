@@ -6,7 +6,7 @@
 /*   By: otzarwal <otzarwal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 13:09:48 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/22 10:19:03 by otzarwal         ###   ########.fr       */
+/*   Updated: 2025/02/22 16:42:02 by otzarwal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,15 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
+#include <stdbool.h>
 
 typedef struct s_stack
 {
     int data;
     int index;
-    struct s_stack *target;
     int moves;
+    bool pos;
+    struct s_stack *target;
     struct s_stack *next;
 } t_stack;
 
