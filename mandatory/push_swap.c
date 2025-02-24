@@ -6,15 +6,15 @@
 /*   By: yagame <yagame@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 11:27:07 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/24 18:28:38 by yagame           ###   ########.fr       */
+/*   Updated: 2025/02/24 22:15:03 by yagame           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void ft_error(char *error)
+void ft_error(void)
 {
-    ft_printf("\033[;31m%s\033[;31m\n", error);
+    write(2,"Error\n",6);
     exit(1);
 }
 
@@ -49,8 +49,7 @@ void check_all_av(char **av, int ac)
             return ;
         check = av_check(*av);
         if(check == 0)
-            ft_error("some argument are had \'\\0\' or just has speace");
-        av++;
+            ft_error();
     }
 }
 void ll()
@@ -69,25 +68,25 @@ int main(int ac, char **av)
         return (0);
     init_stack(&a, &b);
     check_all_av(av, ac);
+
     join_argv(av + 1, &all_arg);
     split_arg = ft_split(all_arg, ' ');
     if(!check_is_only_digit(split_arg))
     {
         ft_clear(split_arg);
-        ft_error("the arguments are not valid");
+        ft_error();
         exit(0);
     }
     if (!check_duplicate(&a, split_arg))
     {
-        ft_error("there are duplicates in the arguments");   
+        ft_error();   
         ft_clear(split_arg);
         ft_clear_lst(&a);
         exit(0);
     }
-    
-    // ft_print_stack(a, b);
+    is_sorted(a);
     sort_all(&a, &b);
     sort_to_a(&a, &b);
-    // ft_print_stack(a, b);
+    ft_print_stack(a, b);
     return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: yagame <yagame@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 13:07:36 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/22 17:49:12 by yagame           ###   ########.fr       */
+/*   Updated: 2025/02/24 22:13:44 by yagame           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,21 +80,25 @@ int    check_is_only_digit(char **arg)
     return (1);
 }
 
-// void ft_sort(t_stack **a, t_stack **b)
-// {
-//     t_stack *tmp;
-//     tmp = *a;
-    
-//     while (tmp)
-//     {
 
-//         if(tmp->index <= 1)
-//         {
-//             pb(&tmp, b);
-//             printf("pb\n");
-//         }
-//         else
-//             tmp = tmp->next;
-//     }
-    
-// }
+void    is_sorted(t_stack *a)
+{
+    t_stack *tmp;
+    t_stack *tmp_1;
+
+    tmp = a;
+    tmp_1 = tmp->next;
+    while(tmp)
+    {
+        
+        while(tmp_1)
+        {
+            if(tmp->data > tmp_1->data)
+                return;
+            tmp_1 = tmp_1->next;
+        }
+        tmp = tmp->next;
+        tmp_1 = tmp;
+    }
+    ft_error();
+}

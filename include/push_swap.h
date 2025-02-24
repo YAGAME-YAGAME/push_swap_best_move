@@ -6,7 +6,7 @@
 /*   By: yagame <yagame@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 11:25:11 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/24 01:07:43 by yagame           ###   ########.fr       */
+/*   Updated: 2025/02/24 22:13:57 by yagame           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define PUSH_SWAP_H
 
 # include "../libft/libft.h"
-# include "../ft_printf/ft_printf.h"
 
 
 
@@ -27,6 +26,11 @@ int     check_duplicate(t_stack **a, char **arg);
 void    ft_sort(t_stack **a, t_stack **b);
 void    ft_sort_3(t_stack **a);
 
+// error
+void     ft_error();
+
+// sorted
+void    is_sorted(t_stack *a);
 
 void    ft_print_stack(t_stack *a, t_stack *b);
 void    sort_all(t_stack **a, t_stack **b);
