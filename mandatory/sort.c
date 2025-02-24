@@ -6,7 +6,7 @@
 /*   By: yagame <yagame@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 19:08:30 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/24 16:19:31 by yagame           ###   ########.fr       */
+/*   Updated: 2025/02/24 16:23:44 by yagame           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,28 +70,6 @@ void    sort_stack(t_stack **a, t_stack **b)
         pb(a, b);
     ft_sort_3(a);
 }
-// void    sort_stack(t_stack **a, t_stack **b)
-// {
-//     int midel;
-//     t_stack *tmp;
-    
-//     tmp = *a;
-//     midel = get_midel(*a);
-//     while(tmp && ft_lstsize(*a) > 3)
-//     {
-//         if (tmp->data < midel)
-//         {
-//             move_top(a, tmp->data);
-//             pb(a, b);
-//             tmp = *a;
-//         }
-//         else   
-//             tmp = tmp->next;
-//     }
-//     while (ft_lstsize(*a) > 3)
-//         pb(a, b);
-//     ft_sort_3(a);
-// }
 
 void    sort_all(t_stack **a, t_stack **b)
 {
