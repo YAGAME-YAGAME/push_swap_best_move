@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_moves.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: otzarwal <otzarwal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yagame <yagame@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 09:42:52 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/19 19:14:02 by otzarwal         ###   ########.fr       */
+/*   Updated: 2025/02/23 16:03:08 by yagame           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,18 @@ int    check_sort(t_stack **a)
     return 1;
 }
 
+int is_sorted(t_stack *tmp)
+{
+
+    while(tmp && tmp->next)
+    {
+        if (tmp->data > tmp->next->data)
+            return 0;
+        tmp = tmp->next;
+    }
+    
+    return 1;
+}
 void   ft_sort_3(t_stack **a)
 {
     
@@ -32,10 +44,12 @@ void   ft_sort_3(t_stack **a)
     int second;
     int third;
     
+    if(is_sorted(*a))
+        return ;
+    
     first = (*a)->data;
     second = (*a)->next->data;
     third = (*a)->next->next->data;
-
     if (first > second && first > third) 
         ra(a);
     if (first < second && second > third) 

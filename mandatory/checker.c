@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: otzarwal <otzarwal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yagame <yagame@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 13:07:36 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/19 19:13:09 by otzarwal         ###   ########.fr       */
+/*   Updated: 2025/02/22 17:49:12 by yagame           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,10 @@ int     check_duplicate(t_stack **a, char **arg)
 {
     int i;
     long num;
-    int ck;
     t_stack *node;
+    
     num = 0;
     i = 0;
-    ck = 1;
     while(arg[i])
     {
         num = ft_atoi(arg[i]);

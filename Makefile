@@ -1,7 +1,7 @@
 
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+# CFLAGS = -Wall -Wextra -Werror
 
 MOVES_DIR = ./mandatory/operations/
 
@@ -13,6 +13,7 @@ SRCS= ./mandatory/push_swap.c \
 		./mandatory/sort.c \
 		./mandatory/print_stack.c \
 		./mandatory/best_move.c \
+		./mandatory/movement.c \
 		$(MOVES_DIR)sa.c 	$(MOVES_DIR)sb.c \
 		$(MOVES_DIR)pa.c 	$(MOVES_DIR)pb.c \
 		$(MOVES_DIR)rra.c 	$(MOVES_DIR)rrb.c \

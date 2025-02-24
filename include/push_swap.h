@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: otzarwal <otzarwal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yagame <yagame@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 11:25:11 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/19 19:11:21 by otzarwal         ###   ########.fr       */
+/*   Updated: 2025/02/24 01:07:43 by yagame           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,12 @@ void ft_clear_lst(t_stack **a);
 
 void    sort_to_a(t_stack **a, t_stack **b);
 
+//movement
+void    fimish_sort(t_stack **a);
+void move_to_top_0(t_stack **a, t_stack **b,  int first,int secend,  int check);
+void move_to_top_1(t_stack **a, t_stack **b,  t_stack *min, int check);
+void    move_to_top_0_1(t_stack **a, t_stack **b, t_stack *obj);
+void    find_index(t_stack **a, t_stack **b);
 // moves
 void pa(t_stack **a, t_stack **b);
 void pb(t_stack **a, t_stack **b);
