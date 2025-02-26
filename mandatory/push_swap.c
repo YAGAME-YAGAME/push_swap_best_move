@@ -6,7 +6,7 @@
 /*   By: yagame <yagame@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 11:27:07 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/24 22:15:03 by yagame           ###   ########.fr       */
+/*   Updated: 2025/02/26 21:24:08 by yagame           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int av_check(char *str)
         return (0);
     while(*str && *str == ' ')
         str++;
-    if(*str == '\0' || !str)
+    if(*str == '\0')
         return (0);
     else
         return (1);
@@ -41,15 +41,14 @@ void check_all_av(char **av, int ac)
     int i;
     int check;
 
-    i = 0;
-    check = 0;
+    i = 1;
+    check = 1;
     while(i < ac )
     {
-        if(NULL == *av)
-            return ;
-        check = av_check(*av);
+        check = av_check(av[i]);
         if(check == 0)
             ft_error();
+        i++;
     }
 }
 void ll()
@@ -58,6 +57,7 @@ void ll()
 }
 int main(int ac, char **av)
 {
+    // atexit(ll);
     t_stack *a;
     t_stack *b;
     char *all_arg;
@@ -68,7 +68,6 @@ int main(int ac, char **av)
         return (0);
     init_stack(&a, &b);
     check_all_av(av, ac);
-
     join_argv(av + 1, &all_arg);
     split_arg = ft_split(all_arg, ' ');
     if(!check_is_only_digit(split_arg))
@@ -87,6 +86,7 @@ int main(int ac, char **av)
     is_sorted(a);
     sort_all(&a, &b);
     sort_to_a(&a, &b);
-    ft_print_stack(a, b);
+    // ft_clear_lst(&a);
+    // ft_clear_lst(&b);
     return (0);
 }
