@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: yagame <yagame@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 11:27:07 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/27 02:46:48 by codespace        ###   ########.fr       */
+/*   Updated: 2025/02/27 16:55:25 by yagame           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ int main(int ac, char **av)
     is_deferent(&a, split_arg, all_arg);
     if(is_sorted(a) == -1)
         return (0);
+    sort_all(&a, &b);
+    sort_to_a(&a, &b);
     ft_clear(split_arg);
     free(all_arg);
     ft_clear_lst(&a);

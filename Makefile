@@ -1,41 +1,22 @@
 
 
-CC = cc
-# CFLAGS = -Wall -Wextra -Werror
 
-MOVES_DIR = ./mandatory/operations/
+all: mandatoty
 
-SRCS= ./mandatory/push_swap.c \
-		./mandatory/check_args.c \
-		./mandatory/utils.c \
-		./mandatory/check_moves.c \
-		./mandatory/sort.c \
-		./mandatory/print_stack.c \
-		./mandatory/best_move.c \
-		./mandatory/movement.c \
-		$(MOVES_DIR)sa.c 	$(MOVES_DIR)sb.c \
-		$(MOVES_DIR)pa.c 	$(MOVES_DIR)pb.c \
-		$(MOVES_DIR)rra.c 	$(MOVES_DIR)rrb.c \
-		$(MOVES_DIR)ra.c 	$(MOVES_DIR)rb.c \
-		$(MOVES_DIR)rr.c 	$(MOVES_DIR)rrr.c \
-		$(MOVES_DIR)ss.c \
+mandatoty:
+	@make -C ./mandatory/
 
-OBJS = $(SRCS:.c=.o)
+bonus: bs
 
-all : $(OBJS) ./libft/libft.a 
-	@$(CC) $(CFLAGS) $(OBJS) ./libft/libft.a  -o push_swap
+bs:
+	@make -C ./bonus/ 
 
-%.o: %.c ./include/push_swap.h libft/libft.h 
-	@$(CC) $(CFLAGS) -c $< -o $@
+clean:
+	make -C ./mandatory/ clean
+	make -C ./bonus/ clean
 
-clean :
-	@make -C libft clean
-	@rm -rf $(OBJS)
+fclean:
+	make -C ./mandatory/ fclean
+	make -C ./bonus/ fclean
 
-fclean : clean
-	@make -C libft fclean
-	@rm push_swap
-
-./libft/libft.a :
-	@make -C libft
-
+re: fclean all

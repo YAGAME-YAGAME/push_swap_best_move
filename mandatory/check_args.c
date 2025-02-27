@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: yagame <yagame@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 13:07:36 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/27 02:45:44 by codespace        ###   ########.fr       */
+/*   Updated: 2025/02/27 16:45:09 by yagame           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int     check_duplicate(t_stack **a, char **arg)
         num = ft_atoi(arg[i]);
         if (num < -2147483648 || num > 2147483647)
             return (0);
-        if (!duplicate(*a, num) == -1)
+        if (duplicate(*a, num) == -1)
             return (0);
         node = ft_lstnew(num);
         ft_lstadd_back(a, node);
