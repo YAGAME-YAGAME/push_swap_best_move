@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yagame <yagame@student.42.fr>              +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 11:27:07 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/26 21:24:08 by yagame           ###   ########.fr       */
+/*   Updated: 2025/02/26 22:57:17 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ void ll()
 }
 int main(int ac, char **av)
 {
-    // atexit(ll);
     t_stack *a;
     t_stack *b;
     char *all_arg;
@@ -73,20 +72,22 @@ int main(int ac, char **av)
     if(!check_is_only_digit(split_arg))
     {
         ft_clear(split_arg);
+        free(all_arg);
         ft_error();
         exit(0);
     }
     if (!check_duplicate(&a, split_arg))
     {
-        ft_error();   
         ft_clear(split_arg);
+        free(all_arg);
         ft_clear_lst(&a);
-        exit(0);
+        ft_error();
     }
     is_sorted(a);
     sort_all(&a, &b);
     sort_to_a(&a, &b);
-    // ft_clear_lst(&a);
-    // ft_clear_lst(&b);
+    ft_clear(split_arg);
+    free(all_arg);
+    ft_clear_lst(&a);
     return (0);
 }
