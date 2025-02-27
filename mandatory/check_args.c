@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   check_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 13:07:36 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/26 22:04:39 by codespace        ###   ########.fr       */
+/*   Updated: 2025/02/27 00:31:54 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,4 +101,25 @@ void    is_sorted(t_stack *a)
         tmp_1 = tmp;
     }
     ft_error();
+}
+
+void    is_only_digit(char **split_arg, char *all_arg)
+{
+    if(!check_is_only_digit(split_arg))
+    {
+        ft_clear(split_arg);
+        free(all_arg);
+        ft_error();
+        exit(0);
+    }
+}
+void     is_deferent(t_stack **a, char **split_arg, char *all_arg)
+{
+    if (!check_duplicate(a, split_arg))
+    {
+        ft_clear(split_arg);
+        free(all_arg);
+        ft_clear_lst(a);
+        ft_error();
+    }
 }

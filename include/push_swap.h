@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yagame <yagame@student.42.fr>              +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 11:25:11 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/24 22:13:57 by yagame           ###   ########.fr       */
+/*   Updated: 2025/02/27 00:31:36 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,11 @@ int     check_duplicate(t_stack **a, char **arg);
 
 void    ft_sort(t_stack **a, t_stack **b);
 void    ft_sort_3(t_stack **a);
+
+
+// check argument 
+void        is_deferent(t_stack **a, char **split_arg, char *all_arg);
+void        is_only_digit(char **split_arg, char *all_arg);
 
 // error
 void     ft_error();

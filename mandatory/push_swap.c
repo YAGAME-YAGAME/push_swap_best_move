@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 11:27:07 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/26 22:57:17 by codespace        ###   ########.fr       */
+/*   Updated: 2025/02/27 00:49:25 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,7 @@ void check_all_av(char **av, int ac)
         i++;
     }
 }
-void ll()
-{
-    system("leaks -q push_swap");
-}
+
 int main(int ac, char **av)
 {
     t_stack *a;
@@ -69,25 +66,15 @@ int main(int ac, char **av)
     check_all_av(av, ac);
     join_argv(av + 1, &all_arg);
     split_arg = ft_split(all_arg, ' ');
-    if(!check_is_only_digit(split_arg))
-    {
-        ft_clear(split_arg);
-        free(all_arg);
-        ft_error();
-        exit(0);
-    }
-    if (!check_duplicate(&a, split_arg))
-    {
-        ft_clear(split_arg);
-        free(all_arg);
-        ft_clear_lst(&a);
-        ft_error();
-    }
+    is_only_digit(split_arg, all_arg);
+    is_deferent(&a, split_arg, all_arg);
     is_sorted(a);
     sort_all(&a, &b);
+    // ft_print_stack(a, b);
     sort_to_a(&a, &b);
     ft_clear(split_arg);
     free(all_arg);
     ft_clear_lst(&a);
+    
     return (0);
 }

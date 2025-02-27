@@ -6,7 +6,7 @@ CC = cc
 MOVES_DIR = ./mandatory/operations/
 
 SRCS= ./mandatory/push_swap.c \
-		./mandatory/checker.c \
+		./mandatory/check_args.c \
 		./mandatory/index.c \
 		./mandatory/utils.c \
 		./mandatory/check_moves.c \
