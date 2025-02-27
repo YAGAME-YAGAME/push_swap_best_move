@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yagame <yagame@student.42.fr>              +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 19:08:30 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/26 17:28:45 by yagame           ###   ########.fr       */
+/*   Updated: 2025/02/27 02:37:54 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,23 +70,6 @@ void    sort_stack(t_stack **a, t_stack **b)
         pb(a, b);
     ft_sort_3(a);
 }
-// void    sort_stack(t_stack **a, t_stack **b)
-// {
-//     int len;
-//     int m;
-//     t_stack *tmp;
-
-//     tmp = *a;
-
-//     len = ft_lstsize(*a);
-//     m = get_midel(*a);
-    
-//     while (tmp->data < m && len-- > 3 )
-//         pb(a, b);
-//     while(len-- > 3)
-//         pb(a, b);
-//     ft_sort_3(a);
-// }
 
 void    sort_all(t_stack **a, t_stack **b)
 {

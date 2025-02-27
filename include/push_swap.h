@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 11:25:11 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/27 00:31:36 by codespace        ###   ########.fr       */
+/*   Updated: 2025/02/27 01:52:08 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void        is_only_digit(char **split_arg, char *all_arg);
 void     ft_error();
 
 // sorted
-void    is_sorted(t_stack *a);
+int    is_sorted(t_stack *a);
 
 void    ft_print_stack(t_stack *a, t_stack *b);
 void    sort_all(t_stack **a, t_stack **b);

@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 16:07:11 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/27 00:45:20 by codespace        ###   ########.fr       */
+/*   Updated: 2025/02/27 02:18:12 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,21 +56,20 @@ void    find_targer(t_stack **a, t_stack **b)
     }
 }
 
-void    find_index(t_stack **a, t_stack **b)
+void set_index_pos(t_stack *stack)
 {
     t_stack *tmp;
+    int len;
     int index;
-    int lst_size_a;
-    int lst_size_b;
     
-    lst_size_a = ft_lstsize(*a) / 2;
-    lst_size_b = ft_lstsize(*b) / 2;
+
+    tmp = stack;
+    len = ft_lstsize(tmp) / 2;
     index = 0;
-    tmp = *a;
-    while(tmp)
+     while(tmp)
     {
         tmp->index = index;
-        if(tmp->index <= lst_size_a)
+        if(tmp->index <= len)
             tmp->pos = 1;
         else
             tmp->pos = 0;
@@ -78,18 +77,12 @@ void    find_index(t_stack **a, t_stack **b)
         tmp = tmp->next;
     }
     
-    tmp = *b;
-    index = 0;
-    while(tmp)
-    {
-        tmp->index = index;
-        if(tmp->index <= lst_size_b)
-            tmp->pos = 1;
-        else
-            tmp->pos = 0;
-        index++;
-        tmp = tmp->next;
-    }
+}
+
+void    find_index(t_stack **a, t_stack **b)
+{
+    set_index_pos(*a);
+    set_index_pos(*b);
 }
 
 int how_moves(t_stack *st, t_stack *tmp)

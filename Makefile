@@ -7,7 +7,6 @@ MOVES_DIR = ./mandatory/operations/
 
 SRCS= ./mandatory/push_swap.c \
 		./mandatory/check_args.c \
-		./mandatory/index.c \
 		./mandatory/utils.c \
 		./mandatory/check_moves.c \
 		./mandatory/sort.c \
