@@ -1,5 +1,5 @@
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+# CFLAGS = -Wall -Wextra -Werror
 
 MOVES_DIR = ./operations/
 
@@ -20,22 +20,20 @@ SRCS= 	push_swap.c \
 
 OBJS = $(SRCS:.c=.o)
 
-all : $(OBJS) ../libft/libft.a 
+all : $(OBJS) ../libft/libft.a
 	@$(CC) $(CFLAGS) $(OBJS) ../libft/libft.a  -o ../push_swap
 
-%.o: %.c ../include/push_swap.h ../libft/libft.h 
+%.o: %.c  ../include/push_swap.h ../libft/libft.h 
 	@$(CC) $(CFLAGS) -c $< -o $@
-
-clean :
-	@make -C ../libft/ clean
-	@rm -rf $(OBJS)
-
-fclean : clean
-	@make -C ../libft/ fclean
-	@rm ../push_swap
 
 ../libft/libft.a :
 	@make -C ../libft/
+
+clean :
+	@rm -rf  $(OBJS)
+
+fclean : clean
+	@rm -rf ../push_swap
 
 re : fclean all
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: otzarwal <otzarwal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yagame <yagame@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 13:09:48 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/22 16:42:02 by otzarwal         ###   ########.fr       */
+/*   Updated: 2025/02/27 23:09:46 by yagame           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <unistd.h>
 # include <stdio.h>
 #include <stdbool.h>
+
+
 
 typedef struct s_stack
 {
@@ -35,7 +37,7 @@ typedef struct s_stack
 // 	void			*content;
 // 	struct s_list	*next;
 // }					t_list;
-
+//fskldjflkjf
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
 int					ft_isalnum(int c);
