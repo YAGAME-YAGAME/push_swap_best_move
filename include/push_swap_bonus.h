@@ -6,7 +6,7 @@
 /*   By: yagame <yagame@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 11:25:11 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/27 21:14:16 by yagame           ###   ########.fr       */
+/*   Updated: 2025/02/28 17:58:41 by yagame           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@
 #include "../libft/libft.h"
 
 
+void    ft_print_stack(t_stack *a, t_stack *b);
+
 // do instriuctio
-int     check_instruction(t_stack **a, t_stack **b, char *instruction);
+void   instructions(t_stack **a, t_stack **b, char **split_arg, char *all_arg);
 
 
 char	*ft_strjoin_2(char *s1, char *s2);

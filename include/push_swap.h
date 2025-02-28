@@ -6,7 +6,7 @@
 /*   By: yagame <yagame@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 11:25:11 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/27 23:18:41 by yagame           ###   ########.fr       */
+/*   Updated: 2025/02/28 17:00:37 by yagame           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@
 # include "../libft/libft.h"
 
 
-
 char	*ft_strjoin_2(char *s1, char *s2);
-void    ft_index(t_stack **a);
 void    join_argv(char **av, char **all_arg);
 int     check_is_only_digit(char **arg);
 int     check_duplicate(t_stack **a, char **arg);

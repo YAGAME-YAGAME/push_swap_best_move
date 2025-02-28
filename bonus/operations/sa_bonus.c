@@ -6,7 +6,7 @@
 /*   By: yagame <yagame@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 12:18:07 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/28 01:43:44 by yagame           ###   ########.fr       */
+/*   Updated: 2025/02/28 17:48:18 by yagame           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void sa(t_stack **lst)
     if (!lst || !*lst || !(*lst)->next)
         return ;
     tmp = (*lst)->next;
+    
     (*lst)->next = tmp->next;
     tmp->next = *lst;
     *lst = tmp;

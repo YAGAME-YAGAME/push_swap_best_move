@@ -1,5 +1,5 @@
 CC = cc
-# CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
 MOVES_DIR = ./operations/
 
