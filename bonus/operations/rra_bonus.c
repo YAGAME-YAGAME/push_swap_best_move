@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rra.c                                              :+:      :+:    :+:   */
+/*   rra_bonus.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: otzarwal <otzarwal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yagame <yagame@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 12:15:54 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/09 15:47:57 by otzarwal         ###   ########.fr       */
+/*   Updated: 2025/02/28 01:43:56 by yagame           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/push_swap.h"
+#include "../../include/push_swap_bonus.h"
 
 void rra(t_stack **lst)
 {
@@ -26,5 +26,4 @@ void rra(t_stack **lst)
     tmp->next = NULL;
     tmp2->next = *lst;
     *lst = tmp2;
-    write(1, "rra\n", 4);
 }

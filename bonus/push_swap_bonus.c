@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_bonus.c                                  :+:      :+:    :+:   */
+/*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yagame <yagame@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 11:27:07 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/27 23:47:45 by yagame           ###   ########.fr       */
+/*   Updated: 2025/02/28 01:29:26 by yagame           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,8 +87,10 @@ int main(int ac, char **av)
         line = get_next_line(0);
         free(tmp);
     }
-    if(is_sorted(a) == -1 && !b)
-        printf("OK\n");
+    if (is_sorted(a) == -1)
+        printf("ok\n");
+    else 
+        printf("ko\n");
     ft_clear(split_arg);
     free(all_arg);
     ft_clear_lst(&a);

@@ -30,16 +30,16 @@ OBJ_BONUS = $(BONUS:.c=.o);
 all: $(NAME)
 
 $(NAME): $(OBJ) $(OBJ_BONUS)
-	$(AR) $(NAME) $(OBJ) $(OBJ_BONUS)
+	@$(AR) $(NAME) $(OBJ) $(OBJ_BONUS)
 
 %.o: %.c $(HEADER)
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	$(RM) $(OBJ) $(OBJ_BONUS)
+	@$(RM) $(OBJ) $(OBJ_BONUS)
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 
 re: fclean all
 

@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sa.c                                               :+:      :+:    :+:   */
+/*   sa_bonus.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: otzarwal <otzarwal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yagame <yagame@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 12:18:07 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/09 12:37:48 by otzarwal         ###   ########.fr       */
+/*   Updated: 2025/02/28 01:43:44 by yagame           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "../../include/push_swap.h"
+#include "../../include/push_swap_bonus.h"
 
 void sa(t_stack **lst)
 {
@@ -23,5 +23,4 @@ void sa(t_stack **lst)
     (*lst)->next = tmp->next;
     tmp->next = *lst;
     *lst = tmp;
-    write(1, "sa\n", 3);
 }

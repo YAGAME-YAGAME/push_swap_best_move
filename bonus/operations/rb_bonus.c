@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rb.c                                               :+:      :+:    :+:   */
+/*   rb_bonus.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: otzarwal <otzarwal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yagame <yagame@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 12:12:07 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/09 12:38:10 by otzarwal         ###   ########.fr       */
+/*   Updated: 2025/02/28 01:44:04 by yagame           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "../../include/push_swap.h"
+#include "../../include/push_swap_bonus.h"
 
 void rb(t_stack **lst)
 {
@@ -27,5 +27,4 @@ void rb(t_stack **lst)
         tmp = tmp->next;
     tmp->next = tmp2;
     tmp2->next = NULL;
-    write(1, "rb\n", 3);
 }

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sb.c                                               :+:      :+:    :+:   */
+/*   sb_bonus.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: otzarwal <otzarwal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yagame <yagame@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 12:18:36 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/09 12:38:38 by otzarwal         ###   ########.fr       */
+/*   Updated: 2025/02/28 01:43:39 by yagame           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/push_swap.h"
+#include "../../include/push_swap_bonus.h"
 
 void sb(t_stack **lst)
 {
@@ -22,5 +22,4 @@ void sb(t_stack **lst)
     (*lst)->next = tmp->next;
     tmp->next = *lst;
     *lst = tmp;
-    write(1, "sb\n", 3);
 }

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pa.c                                               :+:      :+:    :+:   */
+/*   pa_bonus.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: otzarwal <otzarwal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yagame <yagame@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 12:08:03 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/09 12:38:44 by otzarwal         ###   ########.fr       */
+/*   Updated: 2025/02/28 01:44:17 by yagame           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 
-#include "../../include/push_swap.h"
+#include "../../include/push_swap_bonus.h"
 
 void pa(t_stack **a, t_stack **b)
 {
@@ -24,5 +24,4 @@ void pa(t_stack **a, t_stack **b)
     (*b)->next = *a;
     *a = *b;
     *b = tmp;
-    write(1, "pa\n", 3);
 }

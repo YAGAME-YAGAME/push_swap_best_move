@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rrr.c                                              :+:      :+:    :+:   */
+/*   rrr_bonus.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: otzarwal <otzarwal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yagame <yagame@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 12:17:27 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/09 12:38:31 by otzarwal         ###   ########.fr       */
+/*   Updated: 2025/02/28 01:43:48 by yagame           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/push_swap.h"
+#include "../../include/push_swap_bonus.h"
 
 void rrr(t_stack **a, t_stack **b)
 {
@@ -37,5 +37,4 @@ void rrr(t_stack **a, t_stack **b)
     tmp->next = NULL;
     tmp2->next = *b;
     *b = tmp2;
-    write(1, "rrr\n", 4);
 }

@@ -18,7 +18,7 @@ SRCS_BONUS= ./get_line/get_next_line.c \
 		$(MOVES_DIR_BONUS)sa_bonus.c \
 		$(MOVES_DIR_BONUS)sb_bonus.c \
 		$(MOVES_DIR_BONUS)ss_bonus.c \
-		./checker.c \
+		./push_swap_bonus.c \
 		./instructions.c \
 		./utils_bonus.c \
 		./movement_bonus.c \
