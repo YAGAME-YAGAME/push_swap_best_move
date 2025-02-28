@@ -6,22 +6,20 @@
 /*   By: yagame <yagame@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 12:08:03 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/28 17:47:46 by yagame           ###   ########.fr       */
+/*   Updated: 2025/02/28 19:02:23 by yagame           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #include "../../include/push_swap_bonus.h"
 
-void pa(t_stack **a, t_stack **b)
+void	pa(t_stack **a, t_stack **b)
 {
-    t_stack *tmp;
+	t_stack	*tmp;
 
-    if (!b || !*b)
-        return ;
-    tmp = (*b)->next;
-    (*b)->next = *a;
-    *a = *b;
-    *b = tmp;
+	if (!b || !*b)
+		return ;
+	tmp = (*b)->next;
+	(*b)->next = *a;
+	*a = *b;
+	*b = tmp;
 }

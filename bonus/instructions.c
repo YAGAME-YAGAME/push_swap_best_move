@@ -6,7 +6,7 @@
 /*   By: yagame <yagame@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 17:42:48 by yagame            #+#    #+#             */
-/*   Updated: 2025/02/28 18:02:56 by yagame           ###   ########.fr       */
+/*   Updated: 2025/02/28 18:38:49 by yagame           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,8 @@ void   instructions(t_stack **a, t_stack **b, char **split_arg, char *all_arg)
         line = get_next_line(0);
         free(tmp);
     }
-    if (is_sorted(*a) == -1)
-        printf("ok\n");
+    if (is_sorted(*a) == -1 && !*b)
+        printf("\033[0;32mok\n");
     else 
-        printf("ko 2\n");
+        printf("\033[0;31mko\n");
 }

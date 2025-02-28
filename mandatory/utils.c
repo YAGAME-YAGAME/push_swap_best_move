@@ -12,25 +12,27 @@
 
 #include "../include/push_swap.h"
 
-void ft_clear(char **a)
+void	ft_clear(char **a)
 {
-	int i;
+	int	i;
+
 	i = 0;
-	if(!a || !*a)
+	if (!a || !*a)
 		return ;
-	while(a[i])
+	while (a[i])
 	{
 		free(a[i]);
 		i++;
 	}
 	free(a);
 }
-void ft_clear_lst(t_stack **a)
+void	ft_clear_lst(t_stack **a)
 {
-	t_stack *tmp;
-	if(!a || !*a)
+	t_stack	*tmp;
+
+	if (!a || !*a)
 		return ;
-	while(*a)
+	while (*a)
 	{
 		tmp = *a;
 		*a = (*a)->next;

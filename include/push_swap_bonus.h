@@ -6,18 +6,25 @@
 /*   By: yagame <yagame@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 11:25:11 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/28 17:58:41 by yagame           ###   ########.fr       */
+/*   Updated: 2025/02/28 19:52:15 by yagame           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef PUSH_SWAP_BONUS_H
+# define PUSH_SWAP_BONUS_H
 
 #include "../bonus/get_line/get_next_line.h"
 #include "../libft/libft.h"
 
 
-void    ft_print_stack(t_stack *a, t_stack *b);
+
+// best_move_utils
+t_stack	    *find_small(t_stack *a);
+void	    find_targer(t_stack **a, t_stack **b);
+void	    set_index_pos(t_stack *stack);
+void	    find_index(t_stack **a, t_stack **b);
+int	        how_moves(t_stack *st, t_stack *tmp);
+
 
 // do instriuctio
 void   instructions(t_stack **a, t_stack **b, char **split_arg, char *all_arg);

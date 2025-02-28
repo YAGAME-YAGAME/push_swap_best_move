@@ -6,7 +6,7 @@
 /*   By: yagame <yagame@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 13:09:48 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/28 16:38:38 by yagame           ###   ########.fr       */
+/*   Updated: 2025/02/28 18:30:01 by yagame           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <unistd.h>
 # include <stdio.h>
 #include <stdbool.h>
-
 
 
 typedef struct s_stack

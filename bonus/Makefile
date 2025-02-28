@@ -21,30 +21,27 @@ SRCS_BONUS= ./get_line/get_next_line.c \
 		./push_swap_bonus.c \
 		./instructions.c \
 		./utils_bonus.c \
-		./movement_bonus.c \
-		./best_move_bonus.c \
 		./check_args_bonus.c \
 		./check_moves_bonus.c \
-		./sort_bonus.c \
 
 
 OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
 	
 all : $(OBJS_BONUS) ../libft/libft.a
-	@$(CC) $(CFLAGS) $(OBJS_BONUS) ../libft/libft.a -o ../checker
+	$(CC) $(CFLAGS) $(OBJS_BONUS) ../libft/libft.a -o ../checker
 
 %.o: %.c ../include/push_swap_bonus.h ../libft/libft.h 
-	@$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 ../libft/libft.a :
-	@make -C ../libft/
+	make -C ../libft/
 
 clean :
-	@rm -rf $(OBJS_BONUS)
+	rm -rf $(OBJS_BONUS)
 
 fclean : clean
-	@rm  -rf ../checker
+	rm  -rf ../checker
 
 
 

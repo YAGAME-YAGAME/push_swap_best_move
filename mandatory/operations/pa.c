@@ -3,26 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   pa.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: otzarwal <otzarwal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yagame <yagame@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 12:08:03 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/09 12:38:44 by otzarwal         ###   ########.fr       */
+/*   Updated: 2025/02/28 18:26:18 by yagame           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #include "../../include/push_swap.h"
 
-void pa(t_stack **a, t_stack **b)
+void	pa(t_stack **a, t_stack **b)
 {
-    t_stack *tmp;
+	t_stack	*tmp;
 
-    if (!b || !*b)
-        return ;
-    tmp = (*b)->next;
-    (*b)->next = *a;
-    *a = *b;
-    *b = tmp;
-    write(1, "pa\n", 3);
+	if (!b || !*b)
+		return ;
+	tmp = (*b)->next;
+	(*b)->next = *a;
+	*a = *b;
+	*b = tmp;
+	write(1, "pa\n", 3);
 }

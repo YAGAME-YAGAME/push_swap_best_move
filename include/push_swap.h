@@ -6,7 +6,7 @@
 /*   By: yagame <yagame@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 11:25:11 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/28 17:00:37 by yagame           ###   ########.fr       */
+/*   Updated: 2025/02/28 18:52:49 by yagame           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,13 @@ int     check_duplicate(t_stack **a, char **arg);
 void    ft_sort(t_stack **a, t_stack **b);
 void    ft_sort_3(t_stack **a);
 
+
+// best_move_utils
+t_stack	    *find_small(t_stack *a);
+void	    find_targer(t_stack **a, t_stack **b);
+void	    set_index_pos(t_stack *stack);
+void	    find_index(t_stack **a, t_stack **b);
+int	        how_moves(t_stack *st, t_stack *tmp);
 
 // check argument 
 void        is_deferent(t_stack **a, char **split_arg, char *all_arg);
