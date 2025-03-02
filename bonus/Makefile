@@ -5,8 +5,8 @@ MOVES_DIR_BONUS = ./operations/
 
 
 
-SRCS_BONUS= ./get_line/get_next_line.c \
-		./get_line/get_next_line_utils.c \
+SRCS_BONUS= ./get/get_next_line.c \
+		./get/get_next_line_utils.c \
 		$(MOVES_DIR_BONUS)pa_bonus.c \
 		$(MOVES_DIR_BONUS)pb_bonus.c \
 		$(MOVES_DIR_BONUS)ra_bonus.c \
