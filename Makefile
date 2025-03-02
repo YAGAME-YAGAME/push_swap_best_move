@@ -4,12 +4,14 @@
 all: mandatoty
 
 mandatoty:
+	# @make -C libft
 	@make -C ./mandatory/
 
 bonus: bs
 
 bs:
-	@make -C ./bonus/ 
+	# @make -C libft
+	@make -C bonus
 
 clean:
 	@make -C ./libft/ clean

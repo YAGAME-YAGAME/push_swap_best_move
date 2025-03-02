@@ -18,22 +18,33 @@ SRCS= 	push_swap.c \
 		$(MOVES_DIR)rr.c 	$(MOVES_DIR)rrr.c \
 		$(MOVES_DIR)ss.c \
 
+RM = rm -rf
+NAME = push_swap.a
+HEADER = ../include/push_swap.h
+HEADER_LIBFT = ../libft/libft.h
+
 OBJS = $(SRCS:.c=.o)
 
-all : $(OBJS) ../libft/libft.a
-	$(CC) $(CFLAGS) $(OBJS) ../libft/libft.a  -o ../push_swap
+all : push_swap
 
-%.o: %.c  ../include/push_swap.h ../libft/libft.h 
+push_swap : $(NAME) ../libft/libft.a
+	${CC} ${CFLAGS} $(NAME) ../libft/libft.a -o ../push_swap
+
+$(NAME) : $(OBJS)
+	ar rcs $(NAME) $(OBJS)
+	
+%.o: %.c  %(HEADER) $(HEADER_LIBFT)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 ../libft/libft.a :
 	make -C ../libft/
 
 clean :
-	rm -rf  $(OBJS)
+	$(RM)  $(OBJS)
 
 fclean : clean
-	rm -rf ../push_swap
+	$(RM) ../push_swap $(NAME)
 
 re : fclean all
 
+.PHONY: all clean fclean re

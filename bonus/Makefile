@@ -24,14 +24,21 @@ SRCS_BONUS= ./get/get_next_line.c \
 		./check_args_bonus.c \
 		./check_moves_bonus.c \
 
+RM = rm -rf
+NAME = push_swap_bonus.a
+HEADER = ../include/push_swap_bonus.h
+HEADER_LIBFT = ../libft/libft.h
 
 OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
 	
-all : $(OBJS_BONUS) ../libft/libft.a
-	$(CC) $(CFLAGS) $(OBJS_BONUS) ../libft/libft.a -o ../checker
+all : $(NAME) ../libft/libft.a
+	$(CC) $(CFLAGS) $(NAME) ../libft/libft.a -o ../checker
 
-%.o: %.c ../include/push_swap_bonus.h ../libft/libft.h 
+$(NAME) : $(OBJS_BONUS)
+	ar rcs $(NAME) $(OBJS_BONUS)
+
+%.o: %.c $(HEADER) $(HEADER_LIBFT) 
 	$(CC) $(CFLAGS) -c $< -o $@
 
 ../libft/libft.a :
@@ -41,7 +48,11 @@ clean :
 	rm -rf $(OBJS_BONUS)
 
 fclean : clean
-	rm  -rf ../checker
+	$(RM) ../checker $(NAME)
+
+re : fclean all
+
+.PHONY: all clean fclean re
 
 
 

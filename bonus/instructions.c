@@ -3,17 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   instructions.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yagame <yagame@student.42.fr>              +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 17:42:48 by yagame            #+#    #+#             */
-/*   Updated: 2025/02/28 18:38:49 by yagame           ###   ########.fr       */
+/*   Updated: 2025/03/02 15:26:01 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "../include/push_swap_bonus.h"
-#include "./get_line/get_next_line.h"
-
+#include "../include/push_swap_bonus.h"  
 
 int     check_instruction(t_stack **a, t_stack **b, char *instruction)
 {
